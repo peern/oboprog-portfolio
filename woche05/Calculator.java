@@ -124,10 +124,16 @@ public class Calculator {
         return plus (a, negate (multi (times, b)));
     }
 
+    /**
+     * Checks whether two numbers are from "N"
+     */
     private boolean areN(int num1, int num2) {
         return (num1 > 0 && num2 > 0);
     }
     
+    /**
+     * Checks whether two numbers are from "N0"
+     */
     private boolean areN0(int num1, int num2) {
         return (num1 >= 0 && num2 >= 0);
     }
