@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.params=a
+comment0.target=int\ plusOne(int)
+comment0.text=\n\ Please\ take\ this\ method\ for\ granted\ (no\ need\ for\ testing).\ \n\ It\ will\ add\ a\ single\ 1\ to\ the\ number\ (a)\ passed.\n
+comment1.params=a
+comment1.target=int\ negate(int)
+comment1.text=\n\ Please\ take\ this\ method\ for\ granted\ (no\ need\ for\ testing).\ \n\ It\ will\ negate\ the\ passed\ number\ (a),\ i.e.,\ -a\ will\ be\ +a\ and\ vice\ versa.\n
+comment2.params=a\ b
+comment2.target=int\ plus(int,\ int)
+comment2.text=\n\ Adds\ the\ value\ of\ b\ to\ the\ value\ of\ a\n\ @param\ a\ factor\ from\ "Z"\n\ @param\ b\ factor\ from\ "Z"\n\ @return\ returns\ the\ result\ of\ a\ +\ b\n
+comment3.params=a\ b
+comment3.target=int\ multi(int,\ int)
+comment3.text=\n\ Multiplies\ two\ values\ a\ and\ b\ (a\ *\ b)\n\ @param\ a\ factor\ from\ "Z"\n\ @param\ b\ factor\ from\ "Z"\n\ @return\ returns\ the\ result\ of\ a\ *\ b\n
+comment4.params=a\ b
+comment4.target=int\ pow(int,\ int)
+comment4.text=\n\ Raise\ a\ number\ (a)\ to\ a\ given\ power\ (b).\n\ @param\ a\ a\ number\ from\ "N0"\ \n\ @param\ b\ a\ number\ from\ "N0"\n\ @return\ a^b\ or\ -1\ if\ an\ error\ occured\n
+comment5.params=a\ b
+comment5.target=int\ div(int,\ int)
+comment5.text=\n\ Divides\ a\ number\ a\ by\ b.\n\ @param\ a\ a\ number\ from\ "N"\ \n\ @param\ b\ a\ number\ from\ "N"\n\ @return\ a\ /\ b\ or\ -1\ if\ an\ error\ occured\n
+comment6.params=a\ b
+comment6.target=int\ mod(int,\ int)
+comment6.text=\n\ Divides\ a\ number\ a\ by\ b\ and\ returns\ the\ rest.\n\ @param\ a\ a\ number\ from\ "N"\ \n\ @param\ b\ a\ number\ from\ "N"\n\ @return\ a\ %\ b\ or\ -1\ if\ an\ error\ occured\n
+numComments=7
