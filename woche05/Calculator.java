@@ -124,4 +124,11 @@ public class Calculator {
         return plus (a, negate (multi (times, b)));
     }
 
+    private boolean areN(int num1, int num2) {
+        return (num1 > 0 && num2 > 0);
+    }
+    
+    private boolean areN0(int num1, int num2) {
+        return (num1 >= 0 && num2 >= 0);
+    }
 }
