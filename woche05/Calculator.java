@@ -88,13 +88,15 @@ public class Calculator {
      * @return a^b or -1 if an error occured
      */
     public int pow (int a, int b) {
+        int result = 1;
+        
         if(!areN0(a, b)) {
             return -1;
         }
 
-        int result = 1;
         for (int i = 1; i <= b; i = plusOne (i)) {
             result = multi (result, a);
+            
         }
         return result;
     }
@@ -127,8 +129,17 @@ public class Calculator {
      * @return a % b or -1 if an error occured
      */
     public int mod (int a, int b) {
-        int times = div (b, a);
-        return plus (a, negate (multi (times, b)));
+        int integerQuotient = 0;
+        
+        if(!areN(a, b)) {
+            return -1;
+        }
+        
+        while(multi(b, plusOne(integerQuotient)) <= a) {
+            integerQuotient = plusOne(integerQuotient);
+        }
+        
+        return plus(a, negate(multi(integerQuotient, b)));
     }
 
     /**
