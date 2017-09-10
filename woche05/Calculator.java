@@ -89,14 +89,14 @@ public class Calculator {
      */
     public int pow (int a, int b) {
         int result = 1;
-        
+
         if(!areN0(a, b)) {
             return -1;
         }
 
         for (int i = 1; i <= b; i = plusOne (i)) {
             result = multi (result, a);
-            
+
         }
         return result;
     }
@@ -130,23 +130,39 @@ public class Calculator {
      */
     public int mod (int a, int b) {
         int integerQuotient = 0;
-        
+
         if(!areN(a, b)) {
             return -1;
         }
-        
+
         while(multi(b, plusOne(integerQuotient)) <= a) {
             integerQuotient = plusOne(integerQuotient);
         }
-        
+
         return plus(a, negate(multi(integerQuotient, b)));
     }
 
     /**
-     * Checks whether two numbers are from "N"
+     * Checks whether a number is prime
+     * @param a a number from "N2" 
+     * @return true if number is prime, false if number is not prime or not from N2
      */
-    private boolean areN(int num1, int num2) {
-        return (num1 > 0 && num2 > 0);
+    public boolean isPrime(int a) {
+        if(a == 2) {
+            return true;
+        }
+        
+        if(!isN2(a) || mod(a, 2) == 0) {
+            return false;
+        }
+
+        for(int i = 3; i < a; i = plusOne(i)) {
+            if(div(a, i) != -1) {
+                return false;
+            }
+        }
+        
+        return true;
     }
 
     /**
@@ -154,5 +170,19 @@ public class Calculator {
      */
     private boolean areN0(int num1, int num2) {
         return (num1 >= 0 && num2 >= 0);
+    }
+
+    /**
+     * Checks whether two numbers are from "N"
+     */
+    private boolean areN(int num1, int num2) {
+        return (num1 >= 1 && num2 >= 1);
+    }
+
+    /**
+     * Checks whether a number is from "N2"
+     */
+    private boolean isN2(int number) {
+        return number >= 2;
     }
 }

@@ -184,4 +184,30 @@ public class CalculatorTest {
         assertEquals(12, calculator.mod(87, 15));
         assertEquals(19, calculator.mod(295, 23));
     }
+    
+    @Test
+    public void testIsPrimeTrue() {
+        assertTrue(calculator.isPrime(2));
+        assertTrue(calculator.isPrime(3));
+        assertTrue(calculator.isPrime(5));
+        assertTrue(calculator.isPrime(7));
+        assertTrue(calculator.isPrime(11));
+        assertTrue(calculator.isPrime(13));
+        assertTrue(calculator.isPrime(107));
+    }
+    
+    @Test
+    public void testIsPrimeFalse() {
+        assertFalse(calculator.isPrime(0));
+        assertFalse(calculator.isPrime(1));
+        assertFalse(calculator.isPrime(4));
+        assertFalse(calculator.isPrime(25));
+    }
+    
+    @Test
+    public void testIsPrimeInvalid() {
+        assertFalse(calculator.isPrime(0));
+        assertFalse(calculator.isPrime(-1));
+        assertFalse(calculator.isPrime(-42));
+    }
 }
