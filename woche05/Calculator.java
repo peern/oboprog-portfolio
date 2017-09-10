@@ -1,4 +1,3 @@
-
 /**
  * Basic calculator class. This class contains basic 
  * mathematical operations realized based on simple
@@ -24,8 +23,7 @@ public class Calculator {
     private int plusOne(int a) {
         int carry = a & 1;
         int result = a ^ 1;
-        while(carry != 0)
-        {
+        while(carry != 0) {
             int shiftedcarry = carry << 1;
             carry = result & shiftedcarry;
             result ^= shiftedcarry;
@@ -48,26 +46,19 @@ public class Calculator {
      * @return returns the result of a + b
      */
     public int plus (int a, int b) {
-        int loopCount;
-        int result;
+        int result = a;
+        int counter = b;
         boolean negateResult = false;
-        
-        if(a < 0 && b < 0) {
+        if(b < 0) {
             result = negate(a);
-            loopCount = negate(b);
+            counter = negate(b);
             negateResult = true;
-        } else if(b < 0) {
-            loopCount = a;
-            result = b;
-        } else {
-            loopCount = b;
-            result = a;
         }
 
-        for (int i = 1; i <= loopCount; i = plusOne(i)) {
+        for (int i = 0; i < counter; i = plusOne(i)) {
             result = plusOne(result);
         }
-        
+
         return (negateResult ? negate(result) : result);
     }
 
@@ -78,11 +69,16 @@ public class Calculator {
      * @return returns the result of a * b
      */
     public int multi (int a, int b) {
-        int result = 1;
-        for (int i = 1; i < b; i = plus (i, 1)) {
-            result = plus (result, a);
+        int result = 0;
+        boolean negateMultiResult = false;
+        if(b < 0) {
+            b = negate(b);
+            negateMultiResult = true;
         }
-        return result;
+        for (int i = 1; i <= b; i = plusOne(i)) {
+            result = plus(result, a);
+        }
+        return (negateMultiResult ? negate(result) : result);
     }
 
     /**
@@ -92,8 +88,12 @@ public class Calculator {
      * @return a^b or -1 if an error occured
      */
     public int pow (int a, int b) {
+        if(!areN0(a, b)) {
+            return -1;
+        }
+
         int result = 1;
-        for (int i = 1; i < b; i = plus (i, 1)) {
+        for (int i = 1; i <= b; i = plusOne (i)) {
             result = multi (result, a);
         }
         return result;
@@ -107,10 +107,17 @@ public class Calculator {
      */
     public int div (int a, int b) {
         int result = 0;
-        while (a > 0) {
-            a = plus (a, negate(b));
+
+        if(!areN(a, b)) {
+            return -1;
         }
-        return result;
+
+        while(a > 0) {
+            result = plusOne(result);
+            a = plus(a, negate(b));
+        }
+
+        return (a == 0 ? result : -1);
     }
 
     /**
@@ -130,7 +137,7 @@ public class Calculator {
     private boolean areN(int num1, int num2) {
         return (num1 > 0 && num2 > 0);
     }
-    
+
     /**
      * Checks whether two numbers are from "N0"
      */
