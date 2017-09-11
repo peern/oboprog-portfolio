@@ -2,9 +2,9 @@
 dependency1.from=CalculatorTest
 dependency1.to=Calculator
 dependency1.type=UsesDependency
-objectbench.height=101
+objectbench.height=100
 objectbench.width=477
-package.editor.height=427
+package.editor.height=428
 package.editor.width=674
 package.editor.x=667
 package.editor.y=349
