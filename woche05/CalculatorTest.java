@@ -140,17 +140,6 @@ public class CalculatorTest {
 
     @Test
     public void testDivInvalid() {
-        assertEquals(-1, calculator.div(13, 4));
-        assertEquals(-1, calculator.div(17, 5));
-        assertEquals(-1, calculator.div(10, 53));
-        assertEquals(-1, calculator.div(20, 30));
-        assertEquals(-1, calculator.div(1, 5));
-        assertEquals(-1, calculator.div(1, 999));
-        assertEquals(-1, calculator.div(53, 5));
-        assertEquals(-1, calculator.div(13, 4));
-        assertEquals(-1, calculator.div(17, 5));
-        assertEquals(-1, calculator.div(10, 53));
-        assertEquals(-1, calculator.div(20, 30));
         assertEquals(-1, calculator.div(-9, 7));
         assertEquals(-1, calculator.div(42, -6));
         assertEquals(-1, calculator.div(9, 0));
@@ -161,6 +150,13 @@ public class CalculatorTest {
     public void testDiv() {
         assertEquals(7, calculator.div(49, 7));
         assertEquals(7, calculator.div(42, 6));
+        assertEquals(3, calculator.div(13, 4));
+        assertEquals(3, calculator.div(17, 5));
+        assertEquals(0, calculator.div(10, 53));
+        assertEquals(0, calculator.div(20, 30));
+        assertEquals(0, calculator.div(1, 5));
+        assertEquals(0, calculator.div(1, 999));
+        assertEquals(10, calculator.div(53, 5));
     }
 
     @Test

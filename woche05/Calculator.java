@@ -114,12 +114,12 @@ public class Calculator {
             return negate(1);
         }
 
-        while(a > 0) {
+        while(a >= b) {
             result = plusOne(result);
             a = plus(a, negate(b));
         }
 
-        return (a == 0 ? result : negate(1));
+        return result;
     }
 
     /**
@@ -157,7 +157,7 @@ public class Calculator {
         }
 
         for(int i = 3; i < a; i = plusOne(i)) {
-            if(div(a, i) != negate(1)) {
+            if(multi(div(a, i), i) == a) {
                 return false;
             }
         }
