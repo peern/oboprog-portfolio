@@ -91,7 +91,7 @@ public class Calculator {
         int result = 1;
 
         if(!areN0(a, b)) {
-            return -1;
+            return negate(1);
         }
 
         for (int i = 1; i <= b; i = plusOne (i)) {
@@ -111,7 +111,7 @@ public class Calculator {
         int result = 0;
 
         if(!areN(a, b)) {
-            return -1;
+            return negate(1);
         }
 
         while(a > 0) {
@@ -119,7 +119,7 @@ public class Calculator {
             a = plus(a, negate(b));
         }
 
-        return (a == 0 ? result : -1);
+        return (a == 0 ? result : negate(1));
     }
 
     /**
@@ -132,7 +132,7 @@ public class Calculator {
         int integerQuotient = 0;
 
         if(!areN(a, b)) {
-            return -1;
+            return negate(1);
         }
 
         while(multi(b, plusOne(integerQuotient)) <= a) {
@@ -157,7 +157,7 @@ public class Calculator {
         }
 
         for(int i = 3; i < a; i = plusOne(i)) {
-            if(div(a, i) != -1) {
+            if(div(a, i) != negate(1)) {
                 return false;
             }
         }
